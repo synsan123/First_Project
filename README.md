@@ -17,3 +17,4 @@
 
 * 발표자료 : https://www.polarisoffice.com/d/2RRhj7WZ</p>
 
+* 멤버 및 Project 정리 : https://github.com/rudwns04/OPENVINO_PROJECT
