@@ -13,6 +13,7 @@
   | 김용제 | Project member, 프로젝트 멤버1 |
   | 이경준 | Project member, 프로젝트 멤버2 |
 
-* Project Github : 
+* Project Github : https://github.com/synsan123/First_Project/tree/main
 
-* 발표자료 : 
+* 발표자료 : https://www.polarisoffice.com/d/2RRhj7WZ</p>
+
