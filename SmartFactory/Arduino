@@ -1,0 +1,55 @@
+cd repo/intel-01/class02/smart-factory
+git submodule init .
+git submodule update
+python3.8 -m venv .sf_env
+source .sf_env/bin/activate
+pip install -U pip
+pip install -r requirements.txt
+
+Arduino 연결 후 아래 명령어 실행
+ll /dev/ttyACM0
+sudo chmod -R 777 /dev/ttyACM0
+cd arduino
+make
+make init
+make build
+make flash
+
+git clone --recurse-submodule 주소
+
+(.sf_env)에서 repo/intel-01/class02/smart-factory 에서 ./build.sh 실행
+cd resources 후 iotdemo-motion-detector conveyor.mp4 -l 실행
+왼쪽 창에서 r 입력
+q 입력 시 종료
+
+cd repo/intel-01/class02/smart-factory
+iotdemo-motion-detector ./resources/conveyor.mp4 -l -s ./resource/cropedia
+
+D12-C7-D1001-Smart Factory자료 확인
+
+(sudo apt-get install g++ freeglut3-dev build-essential libx11-dev
+libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev gcc-multilib dkms
+mesa-utils)
+
+lsmod|grep nouveau 아무것도 안뜨면 정상
+glxinfo|grep -i "opengl renderer"
+nvidia-smi
+(Cuda 다운되어있으면 생략)
+
+home
+mkdir otx
+python3 -m venv .otx_env
+source .otx_env/bin/activate
+pip install wheel setuptools
+pip install torch==2.2.1 torchvision==0.17.1 --extra-index-url https://download.pytorch.org/whl/cu117 
+pip install otx[full]
+cu117의 경우 원래 12.2버전에 맞게 해야하지만 cu122가 없음
+
+pip install -U pip
+
+cd workspace/oxx
+otx build --train-data-roots ./ox/ --model EfficientNet-B0 --workspace ./classification-task
+cd workspace/oxx/classification-task
+otx train
+otx export
+
